@@ -1,0 +1,7 @@
+Ваш пациент {{user.first_name}} {{user.last_name}}
+логин: {{user.username}}
+
+Прошел тест {{test.name}}.
+
+*С результатом:* {{test.user_score}} {{score}}
+{{interpretation}}
