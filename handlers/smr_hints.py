@@ -11,7 +11,7 @@ from states import BotStates
 smr_list = [file.split('.')[0] for file in os.listdir('data/smr')]
 
 
-@dp.message_handler(lambda message: message.text in ["Подсказки по СМР"], state=BotStates.start)
+@dp.message_handler(lambda message: message.text in ["Подсказки по СМЭР"], state=BotStates.start)
 async def select_hint(message: types.Message):
     text = "Какую подсказску хотели бы получить?"
     await BotStates.smr.set()
