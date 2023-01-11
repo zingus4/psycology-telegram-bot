@@ -31,8 +31,8 @@ class Test:
         return interpretation
 
     def get_question_text(self):
-        text = f'Вопрос {str(self.current_question + 1)}: {self.questions[self.current_question].question}'
-        return text
+        text = f'Вопрос {str(self.current_question + 1)}: \n{self.questions[self.current_question].question}'
+        return text.replace('\\n', '\n')
 
     def get_result_message(self):
         score = morph.parse('балл')[0].make_agree_with_number(self.user_score).word
