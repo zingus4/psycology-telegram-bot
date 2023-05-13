@@ -4,5 +4,3 @@
 
 *Ваш результат:* {{test.user_score}} {{score}}
 {{interpretation}}
-
-Хотите пройти другие тесты?

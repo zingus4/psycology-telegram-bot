@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ParseMode
 
 from core import Test, Answer, Question, Result
-from keyboards.menu import tests_keyboard, back, get_inline_keyboard
+from keyboards.menu import tests_keyboard, back, get_inline_keyboard, main_menu
 from loader import bot, dp, ADMINS
 from states import BotStates
 
@@ -39,10 +39,10 @@ async def test_result(callback_query: types.CallbackQuery, state: FSMContext):
         test = data['test']
         test.user_score += int(callback_query.values['data'].split(':')[1])
 
-        await BotStates.test.set()
+        await BotStates.start.set()
 
         await bot.send_message(
-            user.id, test.get_result_message(), reply_markup=tests_keyboard, parse_mode=ParseMode.MARKDOWN
+            user.id, test.get_result_message(), reply_markup=main_menu, parse_mode=ParseMode.MARKDOWN
         )
 
         await bot.send_message(

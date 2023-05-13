@@ -1,5 +1,6 @@
 Ваш пациент {{user.first_name}} {{user.last_name}}
 логин: {{user.username}}
+id: {{ user.id }}
 
 Прошел тест {{test.name}}.
 
